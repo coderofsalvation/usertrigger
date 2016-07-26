@@ -13,6 +13,7 @@ var tagstore = function(){
 }
 
 var user = function(opts){
+  this.selector = opts.$ || $
   this.reset()
 }
 
@@ -33,22 +34,22 @@ user.prototype.triggerListeners = function(){
   })
 }
 
-user.prototype.has = function(label, domid, events){
+user.prototype.has = function(label, domselector, events){
   var me = this
-  var initDomId = function(domid){
-    var target = $(domid)
+  var initDomId = function(domselector){
+    var target = $(domselector)
     if( !target ) return
     target.on( events, function(e){
       me.tags.set(label,  $(this).val() ? true : false )
       me.triggerListeners()
     })
   }
-  if( events && typeof domid == "string" ) initDomId(domid)
-  if( events && typeof domid != "string" )
-    domid.map( function(_domid){
-      initDomId(_domid)
+  if( events && typeof domselector == "string" ) initDomId(domselector)
+  if( events && typeof domselector != "string" )
+    domselector.map( function(_domselector){
+      initDomId(_domselector)
     })
-  if( !domid ) return this.tags.get(label) === true
+  if( !domselector ) return this.tags.get(label) === true
 }
 
 user.prototype.on = function( listener, cb ){

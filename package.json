@@ -1,7 +1,7 @@
 {
   "name": "usertrigger",
   "version": "1.0.0",
-  "description": "",
+  "description": "generic triggers based on user state, form controls and custom functions (zero-dependency)",
   "main": "index.js",
   "scripts": {
     "build": "minify src/index.js > dist/usertrigger.min.js",
