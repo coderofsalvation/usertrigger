@@ -1,0 +1,24 @@
+{
+  "name": "usertrigger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "minify src/index.js > dist/usertrigger.min.js",
+    "builddev": "cat src/index.js > dist/usertrigger.min.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderofsalvation/usertrigger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderofsalvation/usertrigger/issues"
+  },
+  "homepage": "https://github.com/coderofsalvation/usertrigger#readme",
+  "devDependencies": {
+    "minify": "^2.0.11"
+  }
+}
